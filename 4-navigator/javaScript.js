@@ -7,6 +7,10 @@ const positioLong = 20 ;
 const addresslat = 25;
 const addressLong = 35;
 
-const distanceСalculations = (Math.sqrt(positioLat * addresslat + positioLong * addressLong));
 
-console. log(distanceСalculations); 
+const a = (addresslat - positioLat) ** 2;
+const b = (addressLong - positioLong)  ** 2;
+
+const ab =  (a + b) ** 0.5;
+
+console. log(ab);
