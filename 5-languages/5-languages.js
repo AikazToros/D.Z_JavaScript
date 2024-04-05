@@ -14,5 +14,5 @@ switch (true) {
         console. log('Բարեւ')
         break
     default:
-        console. log('Вы не ввли нежный язык(')    
+        console. log('Вы не ввели нужный язык(')    
 }
