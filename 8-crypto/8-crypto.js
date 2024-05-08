@@ -1,22 +1,22 @@
 function crypto (password) {
 
     const split = password.split('');
-    console.log(split.length / 2);
+    const midIndex = Math.floor (split.length / 2);
      
-    const slice = split.slice(0, 4);
-    const slice2 = split.slice(4);
+    const slice = split.slice(0, midIndex);
+    const slice2 = split.slice(midIndex);
     const connect = slice2.concat(slice);
     const vstroku = connect.join('');
     return vstroku;    
 }
-  console.log(crypto('password'));
+  console.log(crypto('password')); 
 
- function check (crypto2, password ) { 
-    if(password === crypto(crypto2)) {
-        return true;
-    
+  function check(cryptoPass, password){
+    if(!cryptoPass || !password){
+       return false
     }
-    return false;
-       
-}
- console.log(check('wordpass', 'password'));
+    return password === crypto(cryptoPass);
+ }
+
+
+console.log(check('wordpass', 'password'))

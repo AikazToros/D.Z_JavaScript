@@ -1,19 +1,26 @@
 let arr = [40, 1, -5, 10, 0]          
 
-function sort  (a)  {
-  let length = a.length - 1
- 
+ function comparison (firstGroup, secondGroup) {
+    return firstGroup < secondGroup
+ }
   
-  for(let i = 0; i < length; i++)
-      
-      for(var j = 0; j < length - i; j++)
-    
-        if (a[j] > a[j + 1]) {
-
-        [a[j], a[j + 1]] = [a[j + 1], a[j]]
-        }
+ function sort  (array)  {
+   const length = [...array]
+  
+   for(let i = 0; i < length.length; i++){
        
-        
-  return a;
-}
- console.log(sort(arr));   
+       for(let j = 0; j < length.length; j++){
+
+        const Exchange = comparison(length[i], length[j])
+     
+         if (Exchange) {
+ 
+            [length[i], length[j]] = [length[j], length[i]]
+         }
+       }
+     }
+         
+   return length;
+ }
+  console.log(sort(arr));  
+  console.log(arr); 
